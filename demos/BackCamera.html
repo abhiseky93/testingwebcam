@@ -11,17 +11,29 @@
 </head>
 <body>
 	<h1>Rare camera </h1>
-	<h3>Abhishek Test Page</h3>	
+	<h3>Test Page</h3>	
 	<!-- First, include the Webcam.js JavaScript Library -->
 	<script type="text/javascript" src="../webcam.min.js"></script>
 	
-<div id="my_camera" style="width:320px; height:240px;"></div>
-<div id="my_result"></div>
+<div id="my_camera" style="width:768px; height:353px;"></div>
+<a href="javascript:void(take_snapshot())">Take Snapshot</a>
+
+<br/>
+<div id="my_result" style="width:1024px; height:700px;"></div>
 
 <script language="JavaScript">
-Webcam.set( 'constraints',{ facingMode:'environment' });
+Webcam.set( 'constraints',{ 
+			width: 320,
+            height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90,
+			constraints: {
+				width: { exact: 1280 },
+				height: { exact: 720 }
+			},
+	facingMode:'environment' });
 
-    Webcam.attach( '#my_camera' );
+    Webcam.attach('#my_camera');
 
     function take_snapshot() {
         Webcam.snap( function(data_uri) {
@@ -29,8 +41,6 @@ Webcam.set( 'constraints',{ facingMode:'environment' });
         } );
     }
 </script>
-
-<a href="javascript:void(take_snapshot())">Take Snapshot</a>
 	
 </body>
 </html>

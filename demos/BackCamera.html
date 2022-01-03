@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Rare camera </h1>
-	<h3>abhishek page v1.1</h3>	
+	<h3>abhishek page v1.2</h3>	
 	<!-- First, include the Webcam.js JavaScript Library -->
 	<script type="text/javascript" src="../webcam.min.js"></script>
 	
@@ -26,7 +26,8 @@ Webcam.set( 'constraints',{
 			width: 0,
             height: 0,
 			image_format: 'jpeg',
-			jpeg_quality: 90,
+			jpeg_quality: 0,
+			fps:30,
 			dest_width: 0,         // size of captured image
 		dest_height: 0,
 	facingMode:'environment' });

@@ -27,11 +27,8 @@ Webcam.set( 'constraints',{
             height: 240,
 			image_format: 'jpeg',
 			jpeg_quality: 90,
-			flip_horiz: true,
-			constraints: {
-				width: { exact: 1280 },
-				height: { exact: 720 }
-			},
+			dest_width: 320,         // size of captured image
+		dest_height: 240,
 	facingMode:'environment' });
 
     Webcam.attach('#my_camera');
